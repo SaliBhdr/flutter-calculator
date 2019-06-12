@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:Calculator/widgets/button.dart';
-
 import 'Classes/Calculator.dart';
+import 'Classes/ThemeColors.dart';
 
 class VerticalCalculator extends StatefulWidget {
   @override
@@ -11,11 +11,6 @@ class VerticalCalculator extends StatefulWidget {
 
 class _VerticalCalculatorState extends State<VerticalCalculator> {
   String _result = "0";
-
-  static const Color _orangeColor = Color(0xFFFF9900);
-  static const Color _darkGreyColor = Color(0xFFB3B3B3);
-  static const Color _lightGreyColor = Color(0xFFE1E1E1);
-  static const Color _btnFontColor = Color(0xFF000000);
 
   _calculate(String buttonText) {
 
@@ -64,46 +59,46 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
               new Container(
                   width: _screenSize.width,
                   child: new Divider(
-                    color: _darkGreyColor,
+                    color: ThemeColors.getDarkGrey(),
                   )),
               new Row(
                 children: <Widget>[
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('reset'),
-                    color: _darkGreyColor,
+                    color: ThemeColors.getDarkGrey(),
                     content: Text('C',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                       context: context,
                       onPressed: () => _calculate('backspace'),
-                      color: _darkGreyColor,
+                      color: ThemeColors.getDarkGrey(),
                       content: Icon(
                         FontAwesomeIcons.arrowLeft,
-                        color: _btnFontColor,
+                        color: ThemeColors.getBtnFontColor(),
                         size: _screenSize.height * 0.02,
                       )),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('percentage'),
-                    color: _darkGreyColor,
+                    color: ThemeColors.getDarkGrey(),
                     content: Icon(
                       FontAwesomeIcons.percent,
-                      color: _btnFontColor,
+                      color: ThemeColors.getBtnFontColor(),
                       size: _screenSize.height * 0.02,
                     ),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('devide'),
-                    color: _orangeColor,
+                    color: ThemeColors.getOrange(),
                     content: Icon(
                       FontAwesomeIcons.divide,
-                      color: _btnFontColor,
+                      color: ThemeColors.getBtnFontColor(),
                       size: _screenSize.height * 0.02,
                     ),
                   ),
@@ -114,40 +109,40 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('7'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('7',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('8'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('8',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('9'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('9',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('times'),
-                    color: _orangeColor,
+                    color: ThemeColors.getOrange(),
                     content: Icon(
                       FontAwesomeIcons.times,
-                      color: _btnFontColor,
+                      color: ThemeColors.getBtnFontColor(),
                       size: _screenSize.height * 0.02,
                     ),
                   ),
@@ -158,40 +153,40 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('4'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('4',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('5'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('5',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('6'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('6',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('minus'),
-                    color: _orangeColor,
+                    color: ThemeColors.getOrange(),
                     content: Icon(
                       FontAwesomeIcons.minus,
-                      color: _btnFontColor,
+                      color: ThemeColors.getBtnFontColor(),
                       size: _screenSize.height * 0.02,
                     ),
                   ),
@@ -202,40 +197,40 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('1'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('1',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('2'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('2',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('3'),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     content: Text('3',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                   ),
                   new Button.circle(
                     context: context,
                     onPressed: () => _calculate('plus'),
-                    color: _orangeColor,
+                    color: ThemeColors.getOrange(),
                     content: Icon(
                       FontAwesomeIcons.plus,
-                      color: _btnFontColor,
+                      color: ThemeColors.getBtnFontColor(),
                       size: _screenSize.height * 0.02,
                     ),
                   ),
@@ -247,37 +242,37 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
                     context: context,
                     onPressed: () => _calculate('0'),
                     margin: EdgeInsets.only(left: 15, bottom: 7),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     alignment: Alignment.centerLeft,
                     content: Text('0',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.03,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                     radius: BorderRadius.all(Radius.circular(50)),
                   ),
                   new Button.rectangle(
                     context: context,
                     onPressed: () => _calculate('.'),
                     margin: EdgeInsets.only(left: 5, bottom: 7, right: 5),
-                    color: _lightGreyColor,
+                    color: ThemeColors.getLightGrey(),
                     alignment: Alignment.center,
                     content: Text('.',
                         style: TextStyle(
                             fontSize: _screenSize.height * 0.045,
                             fontWeight: FontWeight.bold,
-                            color: _btnFontColor)),
+                            color: ThemeColors.getBtnFontColor())),
                     radius: BorderRadius.all(Radius.circular(50)),
                   ),
                   new Button.rectangle(
                     context: context,
                     onPressed: () => _calculate('equal'),
                     margin: EdgeInsets.only(right: 15, bottom: 7),
-                    color: _orangeColor,
+                    color: ThemeColors.getOrange(),
                     alignment: Alignment.centerRight,
                     content: Icon(
                       FontAwesomeIcons.equals,
-                      color: _btnFontColor,
+                      color: ThemeColors.getBtnFontColor(),
                       size: _screenSize.height * 0.02,
                     ),
                     radius: BorderRadius.all(Radius.circular(50)),
