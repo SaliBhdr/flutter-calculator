@@ -4,6 +4,8 @@ import 'package:Calculator/widgets/button.dart';
 
 import 'Classes/ThemeColors.dart';
 import 'Classes/Calculator.dart';
+import 'widgets/divide.dart';
+import 'widgets/screen.dart';
 
 
 class VerticalCalculator extends StatefulWidget {
@@ -38,31 +40,8 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Container(
-                width: _screenSize.width,
-                alignment: Alignment.centerRight,
-                padding: new EdgeInsets.only(
-                  left: _screenSize.width * 0.02,
-                  right: _screenSize.width * 0.03,
-                  top: _screenSize.height * 0.05,
-                  bottom: _screenSize.height * 0.02,
-                ),
-                child: new Text(
-                  _result,
-                  style: new TextStyle(
-                      fontWeight: FontWeight.bold,
-                      fontSize: _result.length < 12
-                          ? _screenSize.height * 0.078
-                          : (_result.length < 18
-                              ? _screenSize.height * 0.055
-                              : _screenSize.height * 0.04)),
-                ),
-              ),
-              new Container(
-                  width: _screenSize.width,
-                  child: new Divider(
-                    color: ThemeColors.getDarkGrey(),
-                  )),
+              new Screen(_result),
+              new Divide(),
               new Row(
                 children: <Widget>[
                   new Button.circle(
