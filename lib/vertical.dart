@@ -2,6 +2,8 @@ import 'package:Calculator/Classes/ButtonType.dart';
 import 'package:Calculator/widgets/buttons/vertical/circle-dark-grey.dart';
 import 'package:Calculator/widgets/buttons/vertical/circle-light-grey.dart';
 import 'package:Calculator/widgets/buttons/vertical/circle-orange.dart';
+import 'package:Calculator/widgets/buttons/vertical/rectangle-light-grey.dart';
+import 'package:Calculator/widgets/buttons/vertical/rectangle-orange.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:Calculator/widgets/button.dart';
@@ -142,45 +144,24 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
               ),
               new Row(
                 children: <Widget>[
-                  new Button.rectangle(
-                    context: context,
-                    onPressed: () => _calculate('0'),
-                    margin: EdgeInsets.only(left: 15, bottom: 7),
-                    color: ThemeColors.getLightGrey(),
-                    alignment: Alignment.centerLeft,
-                    content: Text('0',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
-                    radius: BorderRadius.all(Radius.circular(50)),
-                  ),
-                  new Button.rectangle(
-                    context: context,
-                    onPressed: () => _calculate('.'),
-                    margin: EdgeInsets.only(left: 5, bottom: 7, right: 5),
-                    color: ThemeColors.getLightGrey(),
-                    alignment: Alignment.center,
-                    content: Text('.',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.045,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
-                    radius: BorderRadius.all(Radius.circular(50)),
-                  ),
-                  new Button.rectangle(
-                    context: context,
-                    onPressed: () => _calculate('equal'),
-                    margin: EdgeInsets.only(right: 15, bottom: 7),
-                    color: ThemeColors.getOrange(),
-                    alignment: Alignment.centerRight,
-                    content: Icon(
-                      FontAwesomeIcons.equals,
-                      color: ThemeColors.getBtnFontColor(),
-                      size: _screenSize.height * 0.02,
-                    ),
-                    radius: BorderRadius.all(Radius.circular(50)),
-                  ),
+                  new RectangleLightGreyButton(
+                      content: '0',
+                      onPressed: () => _calculate('0'),
+                      type: ButtonType.text,
+                      alignment: Alignment.centerLeft,
+                      margin: EdgeInsets.only(left: 15, bottom: 7)),
+                  new RectangleLightGreyButton(
+                      content: '.',
+                      onPressed: () => _calculate('.'),
+                      type: ButtonType.text,
+                      alignment: Alignment.center,
+                      margin: EdgeInsets.only(left: 5, bottom: 7, right: 5)),
+                  new RectangleOrangeButton(
+                      content: FontAwesomeIcons.equals,
+                      onPressed: () => _calculate('equal'),
+                      type: ButtonType.icon,
+                      alignment: Alignment.centerRight,
+                      margin: EdgeInsets.only(right: 15, bottom: 7))
                 ],
               ),
             ],
