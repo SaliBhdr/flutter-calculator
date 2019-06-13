@@ -1,3 +1,7 @@
+import 'package:Calculator/Classes/ButtonType.dart';
+import 'package:Calculator/widgets/buttons/vertical/circle-dark-grey.dart';
+import 'package:Calculator/widgets/buttons/vertical/circle-light-grey.dart';
+import 'package:Calculator/widgets/buttons/vertical/circle-orange.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:Calculator/widgets/button.dart';
@@ -6,7 +10,6 @@ import 'Classes/ThemeColors.dart';
 import 'Classes/Calculator.dart';
 import 'widgets/divide.dart';
 import 'widgets/screen.dart';
-
 
 class VerticalCalculator extends StatefulWidget {
   @override
@@ -17,7 +20,6 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
   String _result = "0";
 
   _calculate(String buttonText) {
-
     Calculator calculator = new Calculator();
 
     setState(() {
@@ -44,177 +46,98 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
               new Divide(),
               new Row(
                 children: <Widget>[
-                  new Button.circle(
-                    context: context,
+                  new CircleDarkGreyButton(
+                    content: 'C',
                     onPressed: () => _calculate('reset'),
-                    color: ThemeColors.getDarkGrey(),
-                    content: Text('C',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                      context: context,
-                      onPressed: () => _calculate('backspace'),
-                      color: ThemeColors.getDarkGrey(),
-                      content: Icon(
-                        FontAwesomeIcons.arrowLeft,
-                        color: ThemeColors.getBtnFontColor(),
-                        size: _screenSize.height * 0.02,
-                      )),
-                  new Button.circle(
-                    context: context,
+                  new CircleDarkGreyButton(
+                    content: FontAwesomeIcons.arrowLeft,
+                    onPressed: () => _calculate('backspace'),
+                    type: ButtonType.icon,
+                  ),
+                  new CircleDarkGreyButton(
+                    content: FontAwesomeIcons.percent,
                     onPressed: () => _calculate('percentage'),
-                    color: ThemeColors.getDarkGrey(),
-                    content: Icon(
-                      FontAwesomeIcons.percent,
-                      color: ThemeColors.getBtnFontColor(),
-                      size: _screenSize.height * 0.02,
-                    ),
+                    type: ButtonType.icon,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleOrangeButton(
+                    content: FontAwesomeIcons.divide,
                     onPressed: () => _calculate('devide'),
-                    color: ThemeColors.getOrange(),
-                    content: Icon(
-                      FontAwesomeIcons.divide,
-                      color: ThemeColors.getBtnFontColor(),
-                      size: _screenSize.height * 0.02,
-                    ),
-                  ),
+                    type: ButtonType.icon,
+                  )
                 ],
               ),
               new Row(
                 children: <Widget>[
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '7',
                     onPressed: () => _calculate('7'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('7',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '8',
                     onPressed: () => _calculate('8'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('8',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '9',
                     onPressed: () => _calculate('9'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('9',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleOrangeButton(
+                    content: FontAwesomeIcons.times,
                     onPressed: () => _calculate('times'),
-                    color: ThemeColors.getOrange(),
-                    content: Icon(
-                      FontAwesomeIcons.times,
-                      color: ThemeColors.getBtnFontColor(),
-                      size: _screenSize.height * 0.02,
-                    ),
-                  ),
+                    type: ButtonType.icon,
+                  )
                 ],
               ),
               new Row(
                 children: <Widget>[
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '4',
                     onPressed: () => _calculate('4'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('4',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '5',
                     onPressed: () => _calculate('5'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('5',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '6',
                     onPressed: () => _calculate('6'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('6',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleOrangeButton(
+                    content: FontAwesomeIcons.minus,
                     onPressed: () => _calculate('minus'),
-                    color: ThemeColors.getOrange(),
-                    content: Icon(
-                      FontAwesomeIcons.minus,
-                      color: ThemeColors.getBtnFontColor(),
-                      size: _screenSize.height * 0.02,
-                    ),
-                  ),
+                    type: ButtonType.icon,
+                  )
                 ],
               ),
               new Row(
                 children: <Widget>[
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '1',
                     onPressed: () => _calculate('1'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('1',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '2',
                     onPressed: () => _calculate('2'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('2',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleLightGreyButton(
+                    content: '3',
                     onPressed: () => _calculate('3'),
-                    color: ThemeColors.getLightGrey(),
-                    content: Text('3',
-                        style: TextStyle(
-                            fontSize: _screenSize.height * 0.03,
-                            fontWeight: FontWeight.bold,
-                            color: ThemeColors.getBtnFontColor())),
+                    type: ButtonType.text,
                   ),
-                  new Button.circle(
-                    context: context,
+                  new CircleOrangeButton(
+                    content: FontAwesomeIcons.plus,
                     onPressed: () => _calculate('plus'),
-                    color: ThemeColors.getOrange(),
-                    content: Icon(
-                      FontAwesomeIcons.plus,
-                      color: ThemeColors.getBtnFontColor(),
-                      size: _screenSize.height * 0.02,
-                    ),
-                  ),
+                    type: ButtonType.icon,
+                  )
                 ],
               ),
               new Row(
