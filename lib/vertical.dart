@@ -29,7 +29,7 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
   Widget build(BuildContext context) {
     var _screenSize = MediaQuery.of(context).size;
 
-    return Container(
+    return new Container(
       width: _screenSize.width,
       height: _screenSize.height,
       child: FittedBox(
