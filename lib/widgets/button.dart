@@ -46,7 +46,7 @@ class Button extends StatelessWidget {
             ),
         alignment = alignment ?? Alignment.center,
         margin = margin ?? EdgeInsets.only(bottom: 10),
-        containerWidth = MediaQuery.of(context).size.width / 4;
+        containerWidth = containerWidth ?? MediaQuery.of(context).size.width / 4;
 
   Button.rectangle(
       {@required this.content,
@@ -70,7 +70,7 @@ class Button extends StatelessWidget {
                 bottom: MediaQuery.of(context).size.height * 0.015),
         alignment = alignment ?? Alignment.centerRight,
         margin = margin ?? EdgeInsets.only(bottom: 10),
-        containerWidth = MediaQuery.of(context).size.width / 3;
+        containerWidth = containerWidth ?? MediaQuery.of(context).size.width / 3;
 
   @override
   Widget build(BuildContext context) {
