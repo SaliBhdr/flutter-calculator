@@ -2,11 +2,9 @@ import 'package:flutter/material.dart';
 
 class Screen extends StatefulWidget {
 
-  String _result;
+  final String result;
 
-  Screen(result){
-    _result = result;
-  }
+  Screen({@required this.result});
 
   @override
   _ScreenState createState() {
@@ -32,12 +30,12 @@ class _ScreenState extends State<Screen> {
         bottom: _screenSize.height * 0.02,
       ),
       child: new Text(
-        widget._result,
+        widget.result,
         style: new TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: widget._result.length < 12
+            fontSize: widget.result.length < 12
                 ? _screenSize.height * 0.078
-                : (widget._result.length < 18
+                : (widget.result.length < 18
                 ? _screenSize.height * 0.055
                 : _screenSize.height * 0.04)),
       ),

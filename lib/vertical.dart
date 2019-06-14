@@ -42,7 +42,7 @@ class _VerticalCalculatorState extends State<VerticalCalculator> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              new Screen(_result),
+              new Screen(result: _result),
               new Divide(),
               new Row(
                 children: <Widget>[
