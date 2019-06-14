@@ -28,8 +28,8 @@ class Calculator {
       _equalCalculation();
     } else if (_isBackBtn(buttonText)) {
       _backCalculation();
-    } else {
-      if (_output.length > 0 && double.parse(_output) != 0.0) {
+    } else if(_output.length < 17) {
+      if (_output.length > 0  && double.parse(_output) != 0.0) {
         _output = _checkFraction(_checkNumber(double.parse(_output))) + buttonText;
       } else {
         _output = buttonText;
@@ -38,6 +38,7 @@ class Calculator {
 
     _finalOutputCalculation(buttonText);
 
+    print(_finalOutput);
     return _finalOutput;
   }
 
