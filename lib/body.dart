@@ -16,7 +16,6 @@ class Body extends StatelessWidget {
       title: Text(this.title),
     );
 
-    // TODO: implement build
     return new Scaffold(
       appBar: _orientation == Orientation.portrait
           ? (_screenSize.height > 500 ? _appBar : null)

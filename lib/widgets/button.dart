@@ -74,7 +74,6 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    // TODO: implement build
     return new Container(
       width: containerWidth,
       child: new GestureDetector(

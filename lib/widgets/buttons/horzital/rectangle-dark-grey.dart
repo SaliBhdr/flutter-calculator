@@ -52,5 +52,8 @@ class RectangleDarkGreyButton extends StatelessWidget {
         radius: BorderRadius.all(Radius.circular(50)),
       );
     }
+
+    return new Container();
+
   }
 }

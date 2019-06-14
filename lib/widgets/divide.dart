@@ -7,7 +7,6 @@ class Divide extends StatelessWidget {
   Widget build(BuildContext context) {
     var _screenSize = MediaQuery.of(context).size;
 
-    // TODO: implement build
     return new Container(
         width: _screenSize.width,
         child: new Divider(

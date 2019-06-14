@@ -30,7 +30,7 @@ class Calculator {
       _backCalculation();
     } else {
       if (_output.length > 0 && double.parse(_output) != 0.0) {
-        _output = _checkFraction(_output) + buttonText;
+        _output = _checkFraction(_checkNumber(double.parse(_output))) + buttonText;
       } else {
         _output = buttonText;
       }
@@ -106,7 +106,7 @@ class Calculator {
 
     _itsOperated = false;
     _operand = "";
-    _num1 = double.parse(_checkNumber(double.parse(_output)));
+    _num1 = double.parse(_output);
     _num2 = 0.0;
   }
 
@@ -150,6 +150,7 @@ class Calculator {
   }
 
   String _checkFraction(String number) {
+    print(number);
     if (number.contains('.')) {
       double doubleNumber = double.parse(_output);
       if (!doubleNumber.isInfinite && !doubleNumber.isNaN) {
