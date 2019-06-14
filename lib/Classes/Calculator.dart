@@ -38,7 +38,6 @@ class Calculator {
 
     _finalOutputCalculation(buttonText);
 
-    print(_finalOutput);
     return _finalOutput;
   }
 
