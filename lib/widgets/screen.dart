@@ -33,9 +33,9 @@ class _ScreenState extends State<Screen> {
         widget.result,
         style: new TextStyle(
             fontWeight: FontWeight.bold,
-            fontSize: widget.result.length < 12
+            fontSize: widget.result.length < 8
                 ? _screenSize.height * 0.078
-                : (widget.result.length < 18
+                : (widget.result.length < 12
                 ? _screenSize.height * 0.055
                 : _screenSize.height * 0.04)),
       ),
