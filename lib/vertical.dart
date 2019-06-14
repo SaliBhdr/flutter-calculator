@@ -6,9 +6,7 @@ import 'package:Calculator/widgets/buttons/vertical/rectangle-light-grey.dart';
 import 'package:Calculator/widgets/buttons/vertical/rectangle-orange.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
-import 'package:Calculator/widgets/button.dart';
 
-import 'Classes/ThemeColors.dart';
 import 'Classes/Calculator.dart';
 import 'widgets/divide.dart';
 import 'widgets/screen.dart';
