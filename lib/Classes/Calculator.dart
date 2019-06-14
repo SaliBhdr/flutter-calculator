@@ -150,7 +150,6 @@ class Calculator {
   }
 
   String _checkFraction(String number) {
-    print(number);
     if (number.contains('.')) {
       double doubleNumber = double.parse(_output);
       if (!doubleNumber.isInfinite && !doubleNumber.isNaN) {
