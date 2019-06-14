@@ -1,8 +1,10 @@
+import 'dart:async';
+import 'dart:io';
+
 import 'package:Calculator/Classes/Vibration.dart';
 import 'package:flutter/material.dart';
 
-class Button extends StatelessWidget {
-
+class Button extends StatefulWidget {
   final content;
 
   final BoxDecoration boxDecoration;
@@ -46,7 +48,8 @@ class Button extends StatelessWidget {
             ),
         alignment = alignment ?? Alignment.center,
         margin = margin ?? EdgeInsets.only(bottom: 10),
-        containerWidth = containerWidth ?? MediaQuery.of(context).size.width / 4;
+        containerWidth =
+            containerWidth ?? MediaQuery.of(context).size.width / 4;
 
   Button.rectangle(
       {@required this.content,
@@ -70,26 +73,65 @@ class Button extends StatelessWidget {
                 bottom: MediaQuery.of(context).size.height * 0.015),
         alignment = alignment ?? Alignment.centerRight,
         margin = margin ?? EdgeInsets.only(bottom: 10),
-        containerWidth = containerWidth ?? MediaQuery.of(context).size.width / 3;
+        containerWidth =
+            containerWidth ?? MediaQuery.of(context).size.width / 3;
+
+  @override
+  _ButtonState createState() => _ButtonState(this.boxDecoration);
+}
+
+class _ButtonState extends State<Button> {
+  BoxDecoration _boxDecoration;
+
+  _ButtonState(this._boxDecoration);
+
+  _setNewDecoration() {
+    var color = this._boxDecoration.color;
+    var shape = this._boxDecoration.shape;
+    var borderRadius = this._boxDecoration.borderRadius;
+
+    this._boxDecoration = new BoxDecoration(
+        color: color.withOpacity(0.7),
+        shape: shape,
+        borderRadius: borderRadius);
+  }
+
+  _getOldBoxDecoration() {
+    var color = this._boxDecoration.color;
+    var shape = this._boxDecoration.shape;
+    var borderRadius = this._boxDecoration.borderRadius;
+
+    sleep(Duration(milliseconds: 110));
+
+    this._boxDecoration = new BoxDecoration(
+        color: color.withOpacity(1), shape: shape, borderRadius: borderRadius);
+  }
 
   @override
   Widget build(BuildContext context) {
     return new Container(
-      width: containerWidth,
+      width: widget.containerWidth,
       child: new GestureDetector(
+        onTapUp: (TapUpDetails details) {
+          setState(() {
+            this._getOldBoxDecoration();
+          });
+        },
         onTapDown: (TapDownDetails details) {
-//          print(details);
+          setState(() {
+            this._setNewDecoration();
+          });
           Vibration.vibrate();
         },
-        onTap: onPressed,
+        onTap: widget.onPressed,
         child: new Container(
-          alignment: this.alignment,
-          margin: this.margin,
-          decoration: this.boxDecoration,
-          padding: this.padding,
+          alignment: this.widget.alignment,
+          margin: this.widget.margin,
+          decoration: this._boxDecoration,
+          padding: this.widget.padding,
           child: CircleAvatar(
             backgroundColor: Colors.transparent,
-            child: this.content,
+            child: this.widget.content,
           ),
         ),
       ),
